@@ -13,41 +13,22 @@ import kotlinx.android.synthetic.main.app_tool_bar.app_toolbar
 class RoutineRegister : AppCompatActivity() {
     private var exercisePartRbGroup = mutableListOf<RadioGroup>()
     private var clearFlag = mutableListOf<Boolean>()
+    private lateinit var multiRadioGroup: MultiRadioGroup
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_routine_register)
+        init()
+
+    }
+
+    fun init(){
         setSupportActionBar(app_toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
         radioSetting()
-        radioOnCheckedListener()
 
         back_btn.setOnClickListener {
             finish()
-        }
-
-    }
-
-    fun checkedRadio(radioGroup: RadioGroup){
-        exercisePartRbGroup.forEach {
-            if(radioGroup!=it) {
-                clearFlag[(exercisePartRbGroup.indexOf(it))] = false
-                it.clearCheck()
-
-            }
-        }
-
-    }
-
-    fun radioOnCheckedListener(){
-        exercisePartRbGroup.forEach {
-            it.setOnCheckedChangeListener { group, checkedId ->
-                if(clearFlag[(exercisePartRbGroup.indexOf(it))]) {
-                    checkedRadio(it)
-                } else {
-                    if(checkedId == -1)
-                    clearFlag[(exercisePartRbGroup.indexOf(it))] = true
-                }
-            }
         }
     }
 
@@ -56,5 +37,6 @@ class RoutineRegister : AppCompatActivity() {
             exercisePartRbGroup.add(radioGroup_layout.getChildAt(i) as RadioGroup)
             clearFlag.add(true)
         }
+        multiRadioGroup = MultiRadioGroup(exercisePartRbGroup,clearFlag,this)
     }
 }
