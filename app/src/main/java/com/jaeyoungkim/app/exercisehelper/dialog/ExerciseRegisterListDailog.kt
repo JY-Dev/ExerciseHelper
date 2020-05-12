@@ -1,4 +1,4 @@
-package com.jaeyoungkim.app.exercisehelper
+package com.jaeyoungkim.app.exercisehelper.dialog
 
 import android.app.Dialog
 import android.content.Context
@@ -9,6 +9,7 @@ import android.view.Window
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import com.jaeyoungkim.app.exercisehelper.R
 import kotlinx.android.synthetic.main.exercise_register_list_dialog.*
 
 

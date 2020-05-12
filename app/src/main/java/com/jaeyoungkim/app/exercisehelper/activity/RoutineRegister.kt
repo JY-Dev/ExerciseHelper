@@ -1,4 +1,4 @@
-package com.jaeyoungkim.app.exercisehelper
+package com.jaeyoungkim.app.exercisehelper.activity
 
 import android.os.Bundle
 import android.widget.CheckBox
@@ -6,6 +6,9 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.jaeyoungkim.app.exercisehelper.adapter.ExerciseKindAdapter
+import com.jaeyoungkim.app.exercisehelper.dialog.ExerciseRegisterListDailog
+import com.jaeyoungkim.app.exercisehelper.R
 import kotlinx.android.synthetic.main.activity_routine_register.*
 import kotlinx.android.synthetic.main.app_tool_bar.*
 import kotlinx.android.synthetic.main.app_tool_bar.app_toolbar
@@ -34,7 +37,11 @@ class RoutineRegister : AppCompatActivity() {
         back_btn.setOnClickListener {
             finish()
         }
-        exerciseListAdapter = ExerciseKindAdapter(exerciseKindArray,this)
+        exerciseListAdapter =
+            ExerciseKindAdapter(
+                exerciseKindArray,
+                this
+            )
 
         exercise_kind_listview.adapter = exerciseListAdapter
         exercise_kind_listview.setOnTouchListener { v, event ->
@@ -52,7 +59,7 @@ class RoutineRegister : AppCompatActivity() {
                         routineResult.set(it,exerciseListAdapter.exerciseKindList)
                     }
                 //TODO DB 등록
-
+                println("test="+routineResult.get("화"))
             } else {
                 Toast.makeText(this,"운동 리스트 생성 및 요일을 선택해주세요.",Toast.LENGTH_SHORT).show()
             }
@@ -88,7 +95,14 @@ class RoutineRegister : AppCompatActivity() {
         exerciseSetNum: Int,
         exercisePerformNum: Int
     ) {
-        exerciseListAdapter.exerciseKindList.add(ExerciseKind(title,exerciseKind,exerciseSetNum,exercisePerformNum))
+        exerciseListAdapter.exerciseKindList.add(
+            ExerciseKind(
+                title,
+                exerciseKind,
+                exerciseSetNum,
+                exercisePerformNum
+            )
+        )
         exerciseListAdapter.notifyDataSetChanged()
         exercise_kind_listview.smoothScrollBy(exercise_kind_listview.maxScrollAmount+200,1000)
     }

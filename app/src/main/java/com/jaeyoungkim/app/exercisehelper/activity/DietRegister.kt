@@ -1,7 +1,8 @@
-package com.jaeyoungkim.app.exercisehelper
+package com.jaeyoungkim.app.exercisehelper.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.jaeyoungkim.app.exercisehelper.R
 
 class DietRegister : AppCompatActivity() {
 

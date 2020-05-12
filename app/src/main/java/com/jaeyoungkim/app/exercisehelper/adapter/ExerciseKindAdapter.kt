@@ -1,4 +1,4 @@
-package com.jaeyoungkim.app.exercisehelper
+package com.jaeyoungkim.app.exercisehelper.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.Button
 import android.widget.TextView
+import com.jaeyoungkim.app.exercisehelper.R
+import com.jaeyoungkim.app.exercisehelper.activity.RoutineRegister
 
 class ExerciseKindAdapter(exerciseKindArray : MutableList<RoutineRegister.ExerciseKind>, context: Context) : BaseAdapter() {
     var exerciseKindList = exerciseKindArray

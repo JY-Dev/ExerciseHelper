@@ -1,4 +1,4 @@
-package com.jaeyoungkim.app.exercisehelper
+package com.jaeyoungkim.app.exercisehelper.util
 
 import android.app.Activity
 import android.widget.RadioButton

@@ -1,7 +1,8 @@
-package com.jaeyoungkim.app.exercisehelper
+package com.jaeyoungkim.app.exercisehelper.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.jaeyoungkim.app.exercisehelper.R
 
 class DailyExercise : AppCompatActivity() {
 
