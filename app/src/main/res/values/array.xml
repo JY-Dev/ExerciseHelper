@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="arm_exercise">
+        <item>바벨 컬</item>
+        <item>덤벨 컬</item>
+        <item>케이블 푸쉬 다운</item>
+        <item>케이블 바이셉스 컬</item>
+        <item>시티드 덤벨컬</item>
+        <item>컨센트레이션 덤벨컬</item>
+        <item>프리쳐 컬</item>
+        <item>해머 컬</item>
+        <item>킥백</item>
+        <item>오버헤드 덤벨 프레스</item>
+        <item>딥스</item>
+        <item>트라이셉스 익스텐션</item>
+        <item>직접입력</item>
+    </string-array>
+
+    <string-array name="leg_exercise">
+        <item>스쿼트</item>
+        <item>데드리프트</item>
+        <item>레그컬</item>
+        <item>덤벨런지</item>
+        <item>바벨런지</item>
+        <item>프론트 스쿼트</item>
+        <item>레그 익스텐션</item>
+    </string-array>
+
+    <string-array name="shoulder_exercise">
+        <item>덤벨 숄더 프레스</item>
+        <item>벤트 오버 레터럴 레이즈</item>
+        <item>사이드 레터럴 레이즈</item>
+        <item>프론트 레터럴 레이즈</item>
+        <item>케이블 레터럴 레이즈</item>
+        <item>오버 헤드 바벨 프레스</item>
+    </string-array>
+
+    <string-array name="chest_exercise">
+        <item>벤치프레스</item>
+        <item>인클라인 벤치프레스</item>
+        <item>덤벨 플라이</item>
+        <item>팩덱 플라이</item>
+        <item>덤벨 프레스</item>
+        <item>풀오버</item>
+    </string-array>
+
+    <string-array name="abs_exercise">
+        <item>벤치프레스</item>
+        <item>인클라인 벤치프레스</item>
+        <item>덤벨 플라이</item>
+        <item>팩덱 플라이</item>
+        <item>덤벨 프레스</item>
+        <item>풀오버</item>
+    </string-array>
+
+    <string-array name="back_exercise">
+        <item>풀업</item>
+        <item>랫풀 다운</item>
+        <item>벤트 오버 바벨로우</item>
+        <item>티바 로우</item>
+        <item>덤벨 로우</item>
+        <item>원암 덤벨 로우</item>
+        <item>바벨 로우</item>
+        <item>케이블 로우</item>
+        <item>오버헤드 랫풀 다운</item>
+    </string-array>
+</resources>

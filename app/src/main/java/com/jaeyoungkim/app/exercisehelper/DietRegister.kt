@@ -1,4 +1,4 @@
-package shinhan.ac.kr.exercisehelper
+package com.jaeyoungkim.app.exercisehelper
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

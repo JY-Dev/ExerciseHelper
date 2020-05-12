@@ -1,7 +1,6 @@
-package shinhan.ac.kr.exercisehelper
+package com.jaeyoungkim.app.exercisehelper
 
 import android.app.Activity
-import android.content.Context
 import android.widget.RadioButton
 import android.widget.RadioGroup
 
@@ -42,7 +41,7 @@ class MultiRadioGroup(rbGroup : MutableList<RadioGroup> , checkFlag : MutableLis
         exercisePartRbGroup.forEach {
             if(it.checkedRadioButtonId!=-1) {
                 val radioButton = mActivity.findViewById<RadioButton>(it.checkedRadioButtonId)
-                return radioButton.text.split(" ")[0]
+                return radioButton.text.toString()
             }
         }
         return "null"
