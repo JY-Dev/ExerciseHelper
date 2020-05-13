@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.RoutineRegister01">
+
+    <!--툴바-->
+    <include
+        android:id="@+id/app_toolbar"
+        layout="@layout/app_tool_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:padding="15dp"
+                    android:text="1. 어느 부위 운동을 선택하시겠습니까?"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/radioGroup_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+
+                    <RadioGroup
+                        android:id="@+id/radio_group1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_arm"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/radio_background"
+                            android:button="@null"
+                            android:checked="true"
+                            android:drawableTop="@drawable/bicep"
+                            android:drawablePadding="15dp"
+                            android:padding="10dp"
+                            android:text="팔 운동"
+                            android:textAlignment="center"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_leg"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/radio_background"
+                            android:button="@null"
+                            android:drawableTop="@drawable/cramp"
+                            android:drawablePadding="15dp"
+                            android:padding="10dp"
+                            android:text="다리 운동"
+                            android:textAlignment="center"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_shoulder"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/radio_background"
+                            android:button="@null"
+                            android:drawableTop="@drawable/shoulder"
+                            android:drawablePadding="15dp"
+                            android:padding="10dp"
+                            android:paddingStart="10dp"
+                            android:text="어깨 운동"
+                            android:textAlignment="center"
+                            android:textSize="20sp" />
+
+
+                    </RadioGroup>
+
+
+                    <RadioGroup
+                        android:id="@+id/radio_group2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_chest"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/radio_background"
+                            android:button="@null"
+                            android:drawableTop="@drawable/chest"
+                            android:drawablePadding="15dp"
+                            android:padding="10dp"
+                            android:text="가슴 운동"
+                            android:textAlignment="center"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_abs"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/radio_background"
+                            android:button="@null"
+                            android:drawableTop="@drawable/body"
+                            android:drawablePadding="15dp"
+                            android:padding="10dp"
+                            android:text="복근 운동"
+                            android:textAlignment="center"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_aerobic"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/radio_background"
+                            android:button="@null"
+                            android:drawableTop="@drawable/back"
+                            android:drawablePadding="15dp"
+                            android:padding="10dp"
+                            android:paddingStart="10dp"
+                            android:text="등 운동"
+                            android:textAlignment="center"
+                            android:textSize="20sp" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/finish_btn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="다음" />
+
+    <LinearLayout
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#fefefe"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="배너"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+
+</LinearLayout>

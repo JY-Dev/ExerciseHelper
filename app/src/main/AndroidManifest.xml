@@ -9,10 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.jaeyoungkim.app.exercisehelper.activity.DietRegister"></activity>
-        <activity android:name="com.jaeyoungkim.app.exercisehelper.activity.RoutineRegister" />
-        <activity android:name="com.jaeyoungkim.app.exercisehelper.activity.DailyExercise" />
-        <activity android:name="com.jaeyoungkim.app.exercisehelper.activity.MainActivity">
+        <activity android:name=".activity.RoutineRegister03"></activity>
+        <activity android:name=".activity.RoutineRegister02" />
+        <activity android:name=".activity.DietRegister" />
+        <activity android:name=".activity.RoutineRegister01" />
+        <activity android:name=".activity.DailyExercise" />
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

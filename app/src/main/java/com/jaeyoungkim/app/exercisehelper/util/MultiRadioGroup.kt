@@ -39,9 +39,9 @@ class MultiRadioGroup(rbGroup : MutableList<RadioGroup> , checkFlag : MutableLis
 
     fun getName() :String{
         exercisePartRbGroup.forEach {
-            if(it.checkedRadioButtonId!=-1) {
-                val radioButton = mActivity.findViewById<RadioButton>(it.checkedRadioButtonId)
-                return radioButton.text.toString()
+            for(i in 0 until it.childCount){
+                val radioButton = it.getChildAt(i) as RadioButton
+                if(radioButton.isChecked) return radioButton.text.toString()
             }
         }
         return "null"

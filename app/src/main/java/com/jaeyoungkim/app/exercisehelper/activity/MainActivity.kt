@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         register_routine_btn.setOnClickListener {
             startActivity(Intent(this,
-                RoutineRegister::class.java))
+                RoutineRegister01::class.java))
         }
     }
 }

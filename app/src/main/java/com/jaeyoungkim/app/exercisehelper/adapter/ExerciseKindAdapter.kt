@@ -8,11 +8,11 @@ import android.widget.BaseAdapter
 import android.widget.Button
 import android.widget.TextView
 import com.jaeyoungkim.app.exercisehelper.R
-import com.jaeyoungkim.app.exercisehelper.activity.RoutineRegister
+import com.jaeyoungkim.app.exercisehelper.activity.RoutineRegister02
 
-class ExerciseKindAdapter(exerciseKindArray : MutableList<RoutineRegister.ExerciseKind>, context: Context) : BaseAdapter() {
+class ExerciseKindAdapter(exerciseKindArray : MutableList<RoutineRegister02.ExerciseKind>, context: Context) : BaseAdapter() {
     var exerciseKindList = exerciseKindArray
-    var mContext = context
+    private var mContext = context
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
         val view = LayoutInflater.from(mContext).inflate(R.layout.exercise_kind_list_item,null)
@@ -20,7 +20,7 @@ class ExerciseKindAdapter(exerciseKindArray : MutableList<RoutineRegister.Exerci
         val exerciseKindTv= view.findViewById<TextView>(R.id.exercise_kind_tv)
         val setNumTv = view.findViewById<TextView>(R.id.set_num_tv)
         val performNumTv = view.findViewById<TextView>(R.id.perform_num_tv)
-        var deleteBtn = view.findViewById<Button>(R.id.del_btn)
+        val deleteBtn = view.findViewById<Button>(R.id.del_btn)
 
         titleTv.text = exerciseKindList[position].title
         exerciseKindTv.text = exerciseKindList[position].exerciseKind
