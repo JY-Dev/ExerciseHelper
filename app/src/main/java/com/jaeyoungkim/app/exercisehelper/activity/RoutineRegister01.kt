@@ -14,7 +14,6 @@ import kotlinx.android.synthetic.main.app_tool_bar.app_toolbar
 
 class RoutineRegister01 : AppCompatActivity() {
     private var exercisePartRbGroup = mutableListOf<RadioGroup>()
-    private var clearFlag = mutableListOf<Boolean>()
     private lateinit var multiRadioGroup: MultiRadioGroup
 
     private lateinit var exerciseListAdapter : ExerciseKindAdapter
@@ -39,7 +38,7 @@ class RoutineRegister01 : AppCompatActivity() {
 
         finish_btn.setOnClickListener {
             val mIntent = Intent(this,RoutineRegister02::class.java)
-            mIntent.putExtra("title",multiRadioGroup.getName())
+            mIntent.putExtra("title",multiRadioGroup.getCheckedRadioName())
            startActivity(mIntent)
         }
     }
@@ -47,9 +46,8 @@ class RoutineRegister01 : AppCompatActivity() {
     fun radioSetting() {
         for (i in 0 until radioGroup_layout.childCount) {
             exercisePartRbGroup.add(radioGroup_layout.getChildAt(i) as RadioGroup)
-            clearFlag.add(true)
         }
-        multiRadioGroup = MultiRadioGroup(exercisePartRbGroup,clearFlag,this)
+        multiRadioGroup = MultiRadioGroup(exercisePartRbGroup)
     }
 
 

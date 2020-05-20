@@ -4,6 +4,7 @@ import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.view.MotionEvent
 import android.view.View
 import android.view.Window
 import android.widget.AdapterView
@@ -25,6 +26,7 @@ class ExerciseRegisterListDailog(context: Context,title:String?,onCallBackListne
         this.setCanceledOnTouchOutside(false)
         exercise_list_dialog_title.text = title
         setArray(title)
+        
         cancel_btn.setOnClickListener {
             this.dismiss()
         }

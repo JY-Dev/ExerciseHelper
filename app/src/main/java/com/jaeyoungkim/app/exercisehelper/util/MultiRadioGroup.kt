@@ -4,17 +4,18 @@ import android.app.Activity
 import android.widget.RadioButton
 import android.widget.RadioGroup
 
-class MultiRadioGroup(rbGroup : MutableList<RadioGroup> , checkFlag : MutableList<Boolean>,activity: Activity)  {
+class MultiRadioGroup(rbGroup : MutableList<RadioGroup>)  {
     private var exercisePartRbGroup : MutableList<RadioGroup> = rbGroup
-    private var clearFlag = checkFlag
-    private var mActivity = activity
-    private var rbId = -1
+    private var clearFlag = mutableListOf<Boolean>()
 
     init {
+        exercisePartRbGroup.forEach {
+            clearFlag.add(true)
+        }
         radioOnCheckedListener()
     }
 
-    fun checkedRadio(radioGroup: RadioGroup){
+   private fun checkedRadio(radioGroup: RadioGroup){
         exercisePartRbGroup.forEach {
             if(radioGroup!=it) {
                 clearFlag[(exercisePartRbGroup.indexOf(it))] = false
@@ -24,7 +25,7 @@ class MultiRadioGroup(rbGroup : MutableList<RadioGroup> , checkFlag : MutableLis
 
     }
 
-    fun radioOnCheckedListener(){
+    private fun radioOnCheckedListener(){
         exercisePartRbGroup.forEach {
             it.setOnCheckedChangeListener { group, checkedId ->
                 if(clearFlag[(exercisePartRbGroup.indexOf(it))]) {
@@ -37,7 +38,7 @@ class MultiRadioGroup(rbGroup : MutableList<RadioGroup> , checkFlag : MutableLis
         }
     }
 
-    fun getName() :String{
+    fun getCheckedRadioName() :String{
         exercisePartRbGroup.forEach {
             for(i in 0 until it.childCount){
                 val radioButton = it.getChildAt(i) as RadioButton
@@ -45,6 +46,16 @@ class MultiRadioGroup(rbGroup : MutableList<RadioGroup> , checkFlag : MutableLis
             }
         }
         return "null"
+    }
+
+    fun getCheckedId() :Int{
+        exercisePartRbGroup.forEach {
+            for(i in 0 until it.childCount){
+                val radioButton = it.getChildAt(i) as RadioButton
+                if(radioButton.isChecked) return radioButton.id
+            }
+        }
+        return -1
     }
 
 
