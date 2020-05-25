@@ -18,7 +18,6 @@ class DataProcess {
     //Room data insert
     fun insertData(context: Context, group: String,exerRoutineArray : MutableList<RoutineRegister02.ExerciseKind>) {
         val array = gson.toJson(exerRoutineArray,listType.type)
-        println("testcheck2="+array)
         val exerRoutine = ExerRoutine(group,array)
         Observable.just(exerRoutine)
             .subscribeOn(Schedulers.io())

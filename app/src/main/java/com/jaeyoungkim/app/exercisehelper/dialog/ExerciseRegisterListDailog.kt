@@ -14,7 +14,7 @@ import com.jaeyoungkim.app.exercisehelper.R
 import kotlinx.android.synthetic.main.exercise_register_list_dialog.*
 
 
-class ExerciseRegisterListDailog(context: Context,title:String?,onCallBackListner : (title : String?, exerciseKind :String,exerciseSetNum :Int,exercisePerformNum : Int) -> Unit) : Dialog(context) {
+class ExerciseRegisterListDailog(context: Context,title:String,onCallBackListner : (title : String, exerciseKind :String,exerciseSetNum :Int,exercisePerformNum : Int) -> Unit) : Dialog(context) {
 
     private var mContext = context
     private var items = mutableListOf<String>()

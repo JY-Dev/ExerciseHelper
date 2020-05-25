@@ -12,10 +12,7 @@ import kotlinx.android.synthetic.main.app_tool_bar.app_toolbar
 class RoutineRegister02 : BaseActivity() {
 
     private lateinit var exerciseListAdapter : ExerciseKindAdapter
-    private var exerciseKindArray = mutableListOf<ExerciseKind>()
-    private var title : String? = ""
-
-
+    private var title : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +28,7 @@ class RoutineRegister02 : BaseActivity() {
         setSupportActionBar(app_toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
         toolbar_title.text = "운동 리스트"
-        if(intent.hasExtra("title")) title = intent.getStringExtra("title")
+        if(intent.hasExtra("title")) title = intent.extras!!.getString("title","")
         if(intent.hasExtra("groupName")) group = intent.extras!!.getString("groupName","")
         exerciseListAdapter =
             ExerciseKindAdapter(
@@ -49,7 +46,7 @@ class RoutineRegister02 : BaseActivity() {
             }
         }
         finish_btn.setOnClickListener {
-            dataProcess.insertData(this,group,exerciseListAdapter.exerciseKindList)
+            dataProcess.updateData(this,group,exerciseListAdapter.exerciseKindList,{})
             val intent = Intent(this,MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
@@ -57,7 +54,7 @@ class RoutineRegister02 : BaseActivity() {
     }
 
     fun addExerciseList(
-        title: String?,
+        title: String,
         exerciseKind: String,
         exerciseSetNum: Int,
         exercisePerformNum: Int
@@ -73,5 +70,5 @@ class RoutineRegister02 : BaseActivity() {
         exerciseListAdapter.notifyDataSetChanged()
         exercise_kind_listview.smoothScrollBy(exercise_kind_listview.maxScrollAmount+2000,1000)
     }
-    data class ExerciseKind(var title: String?,var exerciseKind: String,var exerciseSetNum: Int,var exercisePerformNum: Int)
+    data class ExerciseKind(var title: String,var exerciseKind: String,var exerciseSetNum: Int,var exercisePerformNum: Int)
 }
