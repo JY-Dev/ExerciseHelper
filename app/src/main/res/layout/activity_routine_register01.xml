@@ -19,6 +19,32 @@
         android:gravity="center_vertical"
         android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:padding="15dp"
+                android:text="1. 그룹을 선택해주세요"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/group_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:theme="@style/SpinnerTheme"
+                android:background="@drawable/spinner_background" />
+        </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -29,7 +55,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
                     android:padding="15dp"
-                    android:text="1. 어느 부위 운동을 선택하시겠습니까?"
+                    android:text="2. 어느 부위 운동을 선택하시겠습니까?"
                     android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold" />

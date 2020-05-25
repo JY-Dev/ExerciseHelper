@@ -1,7 +1,6 @@
 package com.jaeyoungkim.app.exercisehelper.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.jaeyoungkim.app.exercisehelper.R
 import com.jaeyoungkim.app.exercisehelper.adapter.ExerciseKindAdapter
@@ -10,17 +9,22 @@ import kotlinx.android.synthetic.main.activity_routine_register02.*
 import kotlinx.android.synthetic.main.app_tool_bar.*
 import kotlinx.android.synthetic.main.app_tool_bar.app_toolbar
 
-class RoutineRegister02 : AppCompatActivity() {
+class RoutineRegister02 : BaseActivity() {
 
     private lateinit var exerciseListAdapter : ExerciseKindAdapter
     private var exerciseKindArray = mutableListOf<ExerciseKind>()
     private var title : String? = ""
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_routine_register02)
         init()
+        dataProcess.loadData(this,this) {
+            exerciseListAdapter.exerciseKindList = exerKindArray
+            exerciseListAdapter.notifyDataSetChanged()
+        }
     }
 
     private fun init(){
@@ -28,9 +32,10 @@ class RoutineRegister02 : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false)
         toolbar_title.text = "운동 리스트"
         if(intent.hasExtra("title")) title = intent.getStringExtra("title")
+        if(intent.hasExtra("groupName")) group = intent.extras!!.getString("groupName","")
         exerciseListAdapter =
             ExerciseKindAdapter(
-                exerciseKindArray,
+                exerKindArray,
                 this
             )
         exercise_kind_listview.adapter = exerciseListAdapter
@@ -44,6 +49,7 @@ class RoutineRegister02 : AppCompatActivity() {
             }
         }
         finish_btn.setOnClickListener {
+            dataProcess.insertData(this,group,exerciseListAdapter.exerciseKindList)
             val intent = Intent(this,MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
@@ -65,7 +71,7 @@ class RoutineRegister02 : AppCompatActivity() {
             )
         )
         exerciseListAdapter.notifyDataSetChanged()
-        exercise_kind_listview.smoothScrollBy(exercise_kind_listview.maxScrollAmount+200,1000)
+        exercise_kind_listview.smoothScrollBy(exercise_kind_listview.maxScrollAmount+2000,1000)
     }
-    class ExerciseKind(var title: String?,var exerciseKind: String,var exerciseSetNum: Int,var exercisePerformNum: Int)
+    data class ExerciseKind(var title: String?,var exerciseKind: String,var exerciseSetNum: Int,var exercisePerformNum: Int)
 }
