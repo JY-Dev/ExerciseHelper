@@ -8,7 +8,7 @@ import android.widget.BaseAdapter
 import android.widget.Button
 import android.widget.TextView
 import com.jaeyoungkim.app.exercisehelper.R
-import com.jaeyoungkim.app.exercisehelper.activity.RoutineRegister02
+import com.jaeyoungkim.app.exercisehelper.activity.routine.RoutineRegister02
 
 class ExerciseKindAdapter(exerciseKindArray : MutableList<RoutineRegister02.ExerciseKind>, context: Context) : BaseAdapter() {
     var exerciseKindList = exerciseKindArray

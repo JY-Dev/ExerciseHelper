@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.RoutineRegister01">
+    tools:context=".activity.routine.RoutineRegister01">
 
     <!--툴바-->
     <include

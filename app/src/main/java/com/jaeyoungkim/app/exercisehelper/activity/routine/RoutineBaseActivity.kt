@@ -1,4 +1,4 @@
-package com.jaeyoungkim.app.exercisehelper.activity
+package com.jaeyoungkim.app.exercisehelper.activity.routine
 
 import android.R
 import android.os.Bundle
@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.jaeyoungkim.app.exercisehelper.room.ExerRoutine
 import com.jaeyoungkim.app.exercisehelper.util.DataProcess
 
-open class BaseActivity : AppCompatActivity() {
+open class RoutineBaseActivity : AppCompatActivity() {
     lateinit var dataProcess : DataProcess
     private var exerRoutineArray = mutableListOf<ExerRoutine>()
     var group = ""
@@ -47,14 +47,9 @@ open class BaseActivity : AppCompatActivity() {
         if(exerRoutineArray.size>0){
             exerRoutineArray.forEach {
                 if(it.group==groupName) {
-                    val array = dataProcess.gson.fromJson<MutableList<RoutineRegister02.ExerciseKind>>(it.exerciseArray,dataProcess.listType.type)
-                    array.forEach {
-                        println("test="+it.title)
-                    }
-                    return array
+                    return dataProcess.gson.fromJson<MutableList<RoutineRegister02.ExerciseKind>>(it.exerciseArray,dataProcess.listType.type)
                 }
             }
-
         }
         return mutableListOf()
 

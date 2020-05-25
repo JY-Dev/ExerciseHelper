@@ -1,4 +1,4 @@
-package com.jaeyoungkim.app.exercisehelper.activity
+package com.jaeyoungkim.app.exercisehelper.activity.routine
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

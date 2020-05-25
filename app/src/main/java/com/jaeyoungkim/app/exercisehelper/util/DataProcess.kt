@@ -4,8 +4,8 @@ import android.content.Context
 import android.util.Log
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
-import com.jaeyoungkim.app.exercisehelper.activity.BaseActivity
-import com.jaeyoungkim.app.exercisehelper.activity.RoutineRegister02
+import com.jaeyoungkim.app.exercisehelper.activity.routine.RoutineBaseActivity
+import com.jaeyoungkim.app.exercisehelper.activity.routine.RoutineRegister02
 import com.jaeyoungkim.app.exercisehelper.room.ExerRoutine
 import com.jaeyoungkim.app.exercisehelper.room.ExerRoutineDataBase
 import io.reactivex.Observable
@@ -30,7 +30,7 @@ class DataProcess {
                 })
     }
 
-    fun updateData(context: Context,groupName: String,exerRoutineArray: MutableList<RoutineRegister02.ExerciseKind>,callBack: () -> Unit){
+    fun updateData(context: Context, groupName: String, exerRoutineArray: MutableList<RoutineRegister02.ExerciseKind>, callBack: () -> Unit){
         Observable.just(ExerRoutineDataBase.getInstance(context))
             .subscribeOn(Schedulers.io())
             .subscribe {
@@ -42,14 +42,14 @@ class DataProcess {
     }
 
     //Room data load
-    fun loadData(context: Context,mainActivity: BaseActivity){
+    fun loadData(context: Context, mainActivityRoutine: RoutineBaseActivity){
         ExerRoutineDataBase
             .getInstance(context)!!
             .getExerRoutineDao()
             .getAllExerRoutine()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                mainActivity.setExerRoutineArray(it)
+                mainActivityRoutine.setExerRoutineArray(it)
             }, {
                 Log.e("MyTag", it.message)
 
@@ -57,14 +57,14 @@ class DataProcess {
     }
 
     //Room data load
-    fun loadData(context: Context,mainActivity: BaseActivity,Callback:()->Unit){
+    fun loadData(context: Context, mainActivityRoutine: RoutineBaseActivity, Callback:()->Unit){
         ExerRoutineDataBase
             .getInstance(context)!!
             .getExerRoutineDao()
             .getAllExerRoutine()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                mainActivity.setExerRoutineArray(it)
+                mainActivityRoutine.setExerRoutineArray(it)
                 Callback()
             }, {
                 Log.e("MyTag", it.message)

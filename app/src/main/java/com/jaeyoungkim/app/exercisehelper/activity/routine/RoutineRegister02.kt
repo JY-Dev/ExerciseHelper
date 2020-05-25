@@ -1,15 +1,16 @@
-package com.jaeyoungkim.app.exercisehelper.activity
+package com.jaeyoungkim.app.exercisehelper.activity.routine
 
 import android.content.Intent
 import android.os.Bundle
 import com.jaeyoungkim.app.exercisehelper.R
+import com.jaeyoungkim.app.exercisehelper.activity.MainActivity
 import com.jaeyoungkim.app.exercisehelper.adapter.ExerciseKindAdapter
 import com.jaeyoungkim.app.exercisehelper.dialog.ExerciseRegisterListDailog
 import kotlinx.android.synthetic.main.activity_routine_register02.*
 import kotlinx.android.synthetic.main.app_tool_bar.*
 import kotlinx.android.synthetic.main.app_tool_bar.app_toolbar
 
-class RoutineRegister02 : BaseActivity() {
+class RoutineRegister02 : RoutineBaseActivity() {
 
     private lateinit var exerciseListAdapter : ExerciseKindAdapter
     private var title : String = ""
@@ -47,7 +48,8 @@ class RoutineRegister02 : BaseActivity() {
         }
         finish_btn.setOnClickListener {
             dataProcess.updateData(this,group,exerciseListAdapter.exerciseKindList,{})
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this,
+                MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
         }

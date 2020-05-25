@@ -1,28 +1,24 @@
-package com.jaeyoungkim.app.exercisehelper.activity
+package com.jaeyoungkim.app.exercisehelper.activity.routine
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.RadioGroup
 import com.jaeyoungkim.app.exercisehelper.R
-import com.jaeyoungkim.app.exercisehelper.adapter.ExerciseKindAdapter
 import com.jaeyoungkim.app.exercisehelper.dialog.GroupCreateDialog
-import com.jaeyoungkim.app.exercisehelper.util.DataProcess
 import com.jaeyoungkim.app.exercisehelper.util.MultiRadioGroup
 import kotlinx.android.synthetic.main.activity_routine_register01.*
 import kotlinx.android.synthetic.main.app_tool_bar.*
 import kotlinx.android.synthetic.main.app_tool_bar.app_toolbar
 
 
-class RoutineRegister01 : BaseActivity() {
+class RoutineRegister01 : RoutineBaseActivity() {
     private var exercisePartRbGroup = mutableListOf<RadioGroup>()
     private lateinit var multiRadioGroup: MultiRadioGroup
     private var groupName = ""
     private var mContext = this
 
-    private lateinit var exerciseListAdapter : ExerciseKindAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_routine_register01)
@@ -60,7 +56,8 @@ class RoutineRegister01 : BaseActivity() {
         }
 
         finish_btn.setOnClickListener {
-            val mIntent = Intent(this,RoutineRegister02::class.java)
+            val mIntent = Intent(this,
+                RoutineRegister02::class.java)
             mIntent.putExtra("title",multiRadioGroup.getCheckedRadioName())
             mIntent.putExtra("groupName",groupName)
            startActivity(mIntent)
