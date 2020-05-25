@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.Log
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
+import com.jaeyoungkim.app.exercisehelper.activity.BaseActivity
 import com.jaeyoungkim.app.exercisehelper.activity.routine.RoutineBaseActivity
 import com.jaeyoungkim.app.exercisehelper.activity.routine.RoutineRegister02
 import com.jaeyoungkim.app.exercisehelper.room.ExerRoutine
@@ -50,6 +51,22 @@ class DataProcess {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 mainActivityRoutine.setExerRoutineArray(it)
+            }, {
+                Log.e("MyTag", it.message)
+
+            })
+    }
+
+    //Room data load
+    fun loadData(context: Context,baseActivity: BaseActivity, Callback:()->Unit){
+        ExerRoutineDataBase
+            .getInstance(context)!!
+            .getExerRoutineDao()
+            .getAllExerRoutine()
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                baseActivity.setExerRoutine(it)
+                Callback()
             }, {
                 Log.e("MyTag", it.message)
 

@@ -13,6 +13,7 @@
         layout="@layout/app_tool_bar" />
 
     <ListView
+        android:id="@+id/list_exercise_group"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
@@ -21,7 +22,7 @@
         android:id="@+id/banner"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#fefefe"
+        android:background="@drawable/button_square"
         android:gravity="center"
         android:orientation="vertical">
 

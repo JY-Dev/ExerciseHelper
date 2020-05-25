@@ -14,8 +14,8 @@ class ExerciseKindAdapter(exerciseKindArray : MutableList<RoutineRegister02.Exer
     var exerciseKindList = exerciseKindArray
     private var mContext = context
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-
-        val view = LayoutInflater.from(mContext).inflate(R.layout.exercise_kind_list_item,null)
+        val view :View = convertView ?: LayoutInflater.from(mContext).inflate(R.layout.exercise_kind_list_item,null)
+        //val view = LayoutInflater.from(mContext).inflate(R.layout.exercise_kind_list_item,null)
         val titleTv = view.findViewById<TextView>(R.id.title_tv)
         val exerciseKindTv= view.findViewById<TextView>(R.id.exercise_kind_tv)
         val setNumTv = view.findViewById<TextView>(R.id.set_num_tv)
