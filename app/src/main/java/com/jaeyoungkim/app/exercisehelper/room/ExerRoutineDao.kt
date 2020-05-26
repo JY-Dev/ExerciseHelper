@@ -9,7 +9,7 @@ import io.reactivex.Flowable
 @Dao
 interface ExerRoutineDao {
     @Query("SELECT * FROM exerroutine WHERE `group` =:groupName")
-    fun getExerRoutine(groupName: String): Flowable<List<ExerRoutine>>
+    fun getExerRoutine(groupName: String): Flowable<ExerRoutine>
 
     @Query("Delete FROM exerroutine WHERE `group` = :groupName")
     fun deleteGroup(groupName:String)

@@ -65,7 +65,7 @@ class DataProcess {
             .getAllExerRoutine()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                baseActivity.setExerRoutine(it)
+                baseActivity.setExerRoutineList(it)
                 Callback()
             }, {
                 Log.e("MyTag", it.message)
@@ -89,6 +89,21 @@ class DataProcess {
             })
     }
 
+    fun loadOneData(context: Context,baseActivity: BaseActivity,groupName: String,Callback:()->Unit){
+        ExerRoutineDataBase
+            .getInstance(context)!!
+            .getExerRoutineDao()
+            .getExerRoutine(groupName)
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                baseActivity.setExerRoutine(it)
+                Callback()
+            }, {
+                Log.e("MyTag", it.message)
+
+            })
+    }
+
     fun deleteData(mContext: Context, groupName: String, callBack: () -> Unit) {
         Observable.just(ExerRoutineDataBase.getInstance(mContext))
             .subscribeOn(Schedulers.io())
@@ -96,5 +111,9 @@ class DataProcess {
                 it?.getExerRoutineDao()?.deleteGroup(groupName)
                 callBack()
             }
+    }
+
+    fun jsonToArray(jsonArray : String) : MutableList<RoutineRegister02.ExerciseKind>{
+        return gson.fromJson(jsonArray,listType.type)
     }
 }

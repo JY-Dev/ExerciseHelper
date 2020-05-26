@@ -30,4 +30,5 @@ class ExerciseGroupAdapter(context: Context, exerRoutine : List<ExerRoutine>) : 
     override fun getCount(): Int {
         return mExerRoutine.size
     }
+    
 }

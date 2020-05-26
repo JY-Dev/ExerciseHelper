@@ -28,7 +28,6 @@ class RoutineRegister02 : RoutineBaseActivity() {
     private fun init(){
         setSupportActionBar(app_toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-        toolbar_title.text = "운동 리스트"
         if(intent.hasExtra("title")) title = intent.extras!!.getString("title","")
         if(intent.hasExtra("groupName")) group = intent.extras!!.getString("groupName","")
         exerciseListAdapter =

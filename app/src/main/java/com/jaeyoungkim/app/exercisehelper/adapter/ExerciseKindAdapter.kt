@@ -47,4 +47,7 @@ class ExerciseKindAdapter(exerciseKindArray : MutableList<RoutineRegister02.Exer
         return exerciseKindList.size
     }
 
+    fun setArray(exerKindArray : MutableList<RoutineRegister02.ExerciseKind>){
+        exerciseKindList = exerKindArray
+    }
 }

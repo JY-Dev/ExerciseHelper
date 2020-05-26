@@ -3,6 +3,7 @@ package com.jaeyoungkim.app.exercisehelper.activity
 import android.content.Intent
 import android.os.Bundle
 import com.jaeyoungkim.app.exercisehelper.R
+import com.jaeyoungkim.app.exercisehelper.activity.dailyexercise.DailyExercise
 import com.jaeyoungkim.app.exercisehelper.activity.routine.RoutineBaseActivity
 import com.jaeyoungkim.app.exercisehelper.activity.routine.RoutineRegister01
 import com.jaeyoungkim.app.exercisehelper.dialog.GroupCreateDialog

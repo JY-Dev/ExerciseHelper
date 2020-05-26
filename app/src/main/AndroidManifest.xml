@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.routine.RoutineRegister03"></activity>
+        <activity android:name=".activity.dailyexercise.DailyExerciseDetail"></activity>
+        <activity android:name=".activity.routine.RoutineRegister03" />
         <activity android:name=".activity.routine.RoutineRegister02" />
         <activity android:name=".activity.DietRegister" />
         <activity android:name=".activity.routine.RoutineRegister01" />
-        <activity android:name=".activity.DailyExercise" />
+        <activity android:name=".activity.dailyexercise.DailyExercise" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

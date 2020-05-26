@@ -7,20 +7,28 @@ import com.jaeyoungkim.app.exercisehelper.room.ExerRoutine
 import com.jaeyoungkim.app.exercisehelper.util.DataProcess
 
 open class BaseActivity : AppCompatActivity() {
-    private var exerRoutine = listOf<ExerRoutine>()
+    private var mExerRoutineList = listOf<ExerRoutine>()
+    private lateinit var mExerRoutine : ExerRoutine
     private lateinit var dataProcess : DataProcess
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
 
-
     }
 
-    fun setExerRoutine(listExerRoutine : List<ExerRoutine>){
-        exerRoutine = listExerRoutine
+    fun setExerRoutineList(listExerRoutine : List<ExerRoutine>){
+        mExerRoutineList = listExerRoutine
     }
 
-    fun getExerRoutine():List<ExerRoutine>{
-        println("test="+exerRoutine.size)
-        return exerRoutine
+    fun getExerRoutineList():List<ExerRoutine>{
+        return mExerRoutineList
     }
+
+    fun setExerRoutine(exerRoutine: ExerRoutine){
+        mExerRoutine = exerRoutine
+    }
+
+    fun getExerRoutine():ExerRoutine{
+        return mExerRoutine
+    }
+
 }

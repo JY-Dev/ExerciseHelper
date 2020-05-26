@@ -13,7 +13,7 @@
         layout="@layout/app_tool_bar" />
 
     <ListView
-        android:id="@+id/list_exercise_group"
+        android:id="@+id/list_exercise_kind"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
