@@ -8,6 +8,7 @@ import com.jaeyoungkim.app.exercisehelper.activity.routine.RoutineRegister02
 import com.jaeyoungkim.app.exercisehelper.adapter.ExerciseKindAdapter
 import com.jaeyoungkim.app.exercisehelper.util.DataProcess
 import kotlinx.android.synthetic.main.activity_daily_exercise_detail.*
+import kotlinx.android.synthetic.main.app_tool_bar.*
 
 class DailyExerciseDetail : BaseActivity() {
     private var groupName = ""
@@ -20,6 +21,7 @@ class DailyExerciseDetail : BaseActivity() {
     }
 
     private fun init(){
+        toolbar_title.text = "운동 루틴"
         if(intent.hasExtra("groupName")) groupName = intent.extras!!.getString("groupName","")
         val adapter = ExerciseKindAdapter(exerciseKindList,this)
         list_exercise_kind.adapter = adapter

@@ -19,41 +19,58 @@
         android:gravity="center_vertical"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:padding="15dp"
-            android:text="2. 운동리스트"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:padding="15dp"
+                android:text="2. 운동리스트"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/exercise_register_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="운동 리스트 생성"
+                android:background="@drawable/button_square"
+                android:layout_marginEnd="20dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:padding="10dp"
+                android:layout_marginTop="20dp"/>
+        </RelativeLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical">
 
             <ListView
                 android:id="@+id/exercise_kind_listview"
                 android:layout_width="match_parent"
-                android:layout_height="350dp"
-                android:background="@drawable/round_square"
-                android:divider="#000000"
-                android:dividerHeight="3dp"
+                android:layout_height="match_parent"
                 android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                android:padding="10dp" />
+                android:dividerHeight="10dp"
+                android:divider="#ffffff"
+                android:scrollbars="none"
+                android:layout_marginEnd="15dp"/>
 
             <LinearLayout
                 android:id="@+id/no_exercise_list"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="match_parent"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:background="@drawable/round_square"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:visibility="gone">
@@ -68,14 +85,7 @@
 
             </LinearLayout>
 
-            <Button
-                android:id="@+id/exercise_register_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="운동 리스트 생성"
-                android:background="@drawable/button_square"
-                android:padding="10dp"
-                android:layout_marginTop="20dp"/>
+
 
 
         </LinearLayout>

@@ -20,7 +20,7 @@ class DataProcess {
     fun insertData(context: Context, group: String,exerRoutineArray : MutableList<RoutineRegister02.ExerciseKind>) {
         val array = gson.toJson(exerRoutineArray,listType.type)
         val exerRoutine = ExerRoutine(group,array)
-        Observable.just(exerRoutine)
+        val a =Observable.just(exerRoutine)
             .subscribeOn(Schedulers.io())
             .subscribe({
                 ExerRoutineDataBase.getInstance(context)
@@ -32,7 +32,7 @@ class DataProcess {
     }
 
     fun updateData(context: Context, groupName: String, exerRoutineArray: MutableList<RoutineRegister02.ExerciseKind>, callBack: () -> Unit){
-        Observable.just(ExerRoutineDataBase.getInstance(context))
+        val a = Observable.just(ExerRoutineDataBase.getInstance(context))
             .subscribeOn(Schedulers.io())
             .subscribe {
 
@@ -44,7 +44,7 @@ class DataProcess {
 
     //Room data load
     fun loadData(context: Context, mainActivityRoutine: RoutineBaseActivity){
-        ExerRoutineDataBase
+        val a =ExerRoutineDataBase
             .getInstance(context)!!
             .getExerRoutineDao()
             .getAllExerRoutine()
@@ -59,7 +59,7 @@ class DataProcess {
 
     //Room data load
     fun loadData(context: Context,baseActivity: BaseActivity, Callback:()->Unit){
-        ExerRoutineDataBase
+        val a =ExerRoutineDataBase
             .getInstance(context)!!
             .getExerRoutineDao()
             .getAllExerRoutine()
@@ -69,13 +69,12 @@ class DataProcess {
                 Callback()
             }, {
                 Log.e("MyTag", it.message)
-
             })
     }
 
     //Room data load
     fun loadData(context: Context, mainActivityRoutine: RoutineBaseActivity, Callback:()->Unit){
-        ExerRoutineDataBase
+        val a = ExerRoutineDataBase
             .getInstance(context)!!
             .getExerRoutineDao()
             .getAllExerRoutine()
@@ -90,7 +89,7 @@ class DataProcess {
     }
 
     fun loadOneData(context: Context,baseActivity: BaseActivity,groupName: String,Callback:()->Unit){
-        ExerRoutineDataBase
+        val a = ExerRoutineDataBase
             .getInstance(context)!!
             .getExerRoutineDao()
             .getExerRoutine(groupName)
@@ -105,7 +104,7 @@ class DataProcess {
     }
 
     fun deleteData(mContext: Context, groupName: String, callBack: () -> Unit) {
-        Observable.just(ExerRoutineDataBase.getInstance(mContext))
+        val a =Observable.just(ExerRoutineDataBase.getInstance(mContext))
             .subscribeOn(Schedulers.io())
             .subscribe {
                 it?.getExerRoutineDao()?.deleteGroup(groupName)

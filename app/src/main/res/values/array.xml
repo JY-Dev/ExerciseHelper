@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <integer-array name="random_img">
+        <item>@drawable/exercise_back01</item>
+        <item>@drawable/exercise_back02</item>
+        <item>@drawable/exercise_back03</item>
+        <item>@drawable/exercise_back04</item>
+        <item>@drawable/exercise_back05</item>
+        <item>@drawable/exercise_back06</item>
+        <item>@drawable/exercise_back07</item>
+        <item>@drawable/exercise_back08</item>
+    </integer-array>
+
     <string-array name="arm_exercise">
         <item>바벨 컬</item>
         <item>덤벨 컬</item>
