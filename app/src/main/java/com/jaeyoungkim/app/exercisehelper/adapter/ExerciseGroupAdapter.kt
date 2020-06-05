@@ -1,14 +1,17 @@
 package com.jaeyoungkim.app.exercisehelper.adapter
 
+import android.app.Activity
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.jaeyoungkim.app.exercisehelper.R
 import com.jaeyoungkim.app.exercisehelper.room.ExerRoutine
+import com.jaeyoungkim.app.exercisehelper.util.DataProcess
 import java.util.*
 
 class ExerciseGroupAdapter(context: Context, exerRoutine : List<ExerRoutine>) : BaseAdapter() {
@@ -21,6 +24,17 @@ class ExerciseGroupAdapter(context: Context, exerRoutine : List<ExerRoutine>) : 
         groupNameTv.text = mExerRoutine[position].group
         val backImg = view.findViewById<ImageView>(R.id.back_img)
         backImg.setBackgroundResource(mBackImg.getResourceId(Random().nextInt(mBackImg.length()-1),0))
+        val delBtn = view.findViewById<Button>(R.id.del_btn)
+        delBtn.setOnClickListener {
+            DataProcess().deleteData(mContext,mExerRoutine[position].group){
+                Thread(Runnable {
+                    val a = mContext as Activity
+                    a.runOnUiThread {
+                        notifyDataSetChanged()
+                    }
+                }).start()
+            }
+        }
         return view
     }
 
